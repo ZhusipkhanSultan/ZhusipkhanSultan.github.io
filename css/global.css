@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "DancingScript";
+    font-weight: 400;
+    src: url(../fonts/DancingScript-Regular.ttf);
+}
+@font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: "Poppins";
+    font-weight: 500;
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: "Poppins";
+    font-weight: 700;
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: "Poppins";
+    font-weight: 900;
+    src: url(../fonts/Poppins-Black.ttf);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html{
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+    font-size: 20px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    margin: 0;
+
+}
+body { 
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+a[class] {
+    text-decoration: none;
+    font: 900 16px/20px "Poppins";
+    color: #1F3347;
+}
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+ul[class], ol[class] {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container{
+    position: relative;
+    max-width: 85%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto; 
+}
+.button{
+    max-width: fit-content;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    background-color: #FFC814;
+}
