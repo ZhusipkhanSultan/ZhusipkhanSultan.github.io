@@ -29,6 +29,7 @@
     box-sizing: border-box;
 }
 html{
+    scroll-padding-top: 100px;
     scroll-behavior: smooth;
     font: 400 20px/1.4 "Montserrat";
 }
@@ -84,6 +85,7 @@ ul[class], ol[class] {
 }
 
 .container{
+    position: relative;
     max-width: 85%;
     padding-left: 16px;
     padding-right: 16px;
@@ -94,6 +96,38 @@ ul[class], ol[class] {
     padding-left: 16px;
     padding-right: 16px;
     margin: 0 auto; 
+}
+.gal_circle{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    animation-name: circle;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: 1;
+    overflow: hidden;
+}
+.menu a {
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.menu a::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #2C90F7;
+    transition: all 0.3s ease;
+}
+.menu a:hover {
+    color: #2C90F7;
+}
+menu a:hover::after {
+    width: 100%;
 }
 h1{
     font: 700 2em/1.2 "Montserrat";

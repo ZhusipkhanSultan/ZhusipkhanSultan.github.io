@@ -1,5 +1,6 @@
+@charset "UTF-8";
 body {
-  background: url(../img/BG\ and\ elements.png), #1B1B20;
+  background: url(../img/BG\ and\ elements.png) #1B1B20 center/cover no-repeat;
   color: #fff;
 }
 
@@ -26,9 +27,6 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-.header__container:hover .passive__income1::after {
-  width: 20rem;
 }
 .header__nav {
   display: flex;
@@ -75,29 +73,62 @@ body {
 .header__button:hover::before {
   width: 150%;
 }
+.header__headen-menu {
+  display: none;
+}
+.header__dropdown {
+  position: relative;
+}
+.header__dropdown img {
+  width: 2rem;
+  height: 2rem;
+}
+.header__dropdown-menu {
+  position: absolute;
+  display: none;
+  top: 105%;
+  right: 20%;
+  min-width: 10rem;
+  padding: 1rem;
+  background-color: #2C90F7;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+.header__dropdown-menu li {
+  margin-bottom: 0.5rem;
+  margin-left: 0.3rem;
+}
+.header__dropdown-btn {
+  position: relative;
+  display: block;
+}
+.header__dropdown:hover .header__dropdown-menu {
+  display: block;
+}
 
-.main-screen {
-  margin-bottom: 6.1rem;
+.wf-section {
+  margin: 0 auto;
+  padding-bottom: 6.1rem;
   padding-top: 9.15rem;
 }
-.main-screen__container {
+.wf-section__container {
   display: grid;
   grid-template-columns: 21.95rem 37.8rem;
   justify-content: space-between;
 }
-.main-screen__content {
+.wf-section__content {
   display: flex;
   flex-direction: column;
 }
-.main-screen__title {
+.wf-section__title {
   margin-bottom: 1.6rem;
   color: #fff;
 }
-.main-screen__txt {
+.wf-section__txt {
   margin-bottom: 2.85rem;
   color: #fff;
 }
-.main-screen__button {
+.wf-section__button {
   position: relative;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -116,17 +147,31 @@ body {
   -webkit-animation: button 5s infinite linear;
           animation: button 5s infinite linear;
 }
-.main-screen__button:hover {
+.wf-section__button:hover {
   color: #833ab4;
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
 }
-.main-screen__animation {
+.wf-section__button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4), transparent);
+  transition: all 650ms;
+}
+.wf-section__button:hover:before {
+  left: 100%;
+}
+.wf-section__animation {
   display: flex;
   position: relative;
   gap: 2.8rem;
   transform-style: preserve-3d;
   transform: perspective(16cm);
 }
-.main-screen__img-man {
+.wf-section__img-man {
   position: absolute;
   left: 10rem;
   top: 10rem;
@@ -143,7 +188,7 @@ body {
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
 }
-.main-screen__right-table {
+.wf-section__right-table {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 15.85rem;
@@ -152,18 +197,18 @@ body {
   border-radius: 50% 20%/10% 40%;
   border: 1px solid #fff;
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-animation-name: right-table;
-          animation-name: right-table;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  -webkit-animation: right-table 5s ease-out infinite;
+  animation: right-table 5s ease-out infinite;
+  transform-origin: 50% top -50px;
+  -webkit-transform-origin: 50% top -250px;
+  -moz-transform-origin: 50% top -250px;
+  -ms-transform-origin: 50% top -250px;
+  transform: scale3d(0.5, -1, 2);
+  -webkit-transform: scale3d(0.5, -1, 2);
+  -moz-transform: scale3d(0.5, -1, 2);
+  -ms-transform: scale3d(0.5, -1, 2);
 }
-.main-screen__left-table {
+.wf-section__left-table {
   position: relative;
   width: 15.85rem;
   height: 14rem;
@@ -173,24 +218,40 @@ body {
   border-radius: 25% 10%;
   border: 1px solid #fff;
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-animation-name: left-table;
-          animation-name: left-table;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  -webkit-animation: left-table 5s ease-out infinite;
+  animation: left-table 5s ease-out infinite;
+  transform-origin: 50% 50% top 350px;
+  -webkit-transform-origin: 50% 50% 250px;
+  -moz-transform-origin: 50% 50% 250px;
+  -ms-transform-origin: 50% 50% 250px;
+  transform: scale3d(0.5, -1, 2);
+  -webkit-transform: scale3d(0.5, -1, 2);
+  -moz-transform: scale3d(0.5, -1, 2);
+  -ms-transform: scale3d(0.5, -1, 2);
 }
-.main-screen__animation:hover .right-table__chart1 {
+.wf-section__animation:hover .right-table__chart1 {
   left: 0;
   top: 4rem;
 }
-.main-screen__animation:hover .right-table__chart2 {
+.wf-section__animation:hover .right-table__chart2 {
   left: 0;
   top: 2.5rem;
+}
+.wf-section__gal {
+  position: absolute;
+  top: -50%;
+  left: 60%;
+  width: 30%;
+  height: 30rem;
+  z-index: -1;
+}
+.wf-section__coin {
+  position: absolute;
+  top: -45%;
+  left: -15%;
+  width: 20%;
+  height: 20rem;
+  z-index: -1;
 }
 
 .right-table__content {
@@ -365,16 +426,16 @@ body {
   transform: scale(1.3) rotate(-300deg) translate(3rem);
 }
 .passive-income__img:hover .anim__red-cercle {
-  -webkit-animation: circle 2s linear 0s 1 alternate forwards;
-          animation: circle 2s linear 0s 1 alternate forwards;
+  transition: all 1.5s ease;
+  transform: scale(1.3) rotate(360deg) translateX(1rem);
 }
 .passive-income__img:hover .anim__green-cercle {
-  -webkit-animation: circle 1s linear 0s 1 alternate forwards;
-          animation: circle 1s linear 0s 1 alternate forwards;
+  transition: all 1.5s ease;
+  transform: scale(1.3) rotate(360deg) translateY(2rem);
 }
 .passive-income__img:hover .anim__blue-cercle {
-  -webkit-animation: circle 3s linear 0s 1 alternate forwards;
-          animation: circle 3s linear 0s 1 alternate forwards;
+  transition: all 1.5s ease;
+  transform: scale(1.3) rotate(-300deg) translate(-9rem);
 }
 
 .anim__pig {
@@ -390,6 +451,14 @@ body {
   position: absolute;
   left: 0;
   top: 1rem;
+  -webkit-animation-name: cash;
+          animation-name: cash;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .anim__cash {
   width: 3rem;
@@ -397,6 +466,14 @@ body {
   position: absolute;
   left: 0;
   top: 1rem;
+  -webkit-animation-name: cash;
+          animation-name: cash;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .anim__cash2 {
   width: 3rem;
@@ -404,8 +481,16 @@ body {
   position: absolute;
   left: 3rem;
   top: 0.5rem;
+  -webkit-animation-name: cash2;
+          animation-name: cash2;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
-.anim__computor {
+.anim__computer {
   width: 10rem;
   height: 7rem;
   position: absolute;
@@ -470,6 +555,105 @@ body {
   top: 10rem;
   border-radius: 50%;
   background-color: green;
+}
+.anim__telephone {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  width: 10%;
+  height: 13%;
+  -webkit-animation-name: levi;
+          animation-name: levi;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.anim__coin1 {
+  position: absolute;
+  top: 38%;
+  left: 18%;
+  width: 10%;
+  height: 5%;
+  -webkit-animation-name: levi;
+          animation-name: levi;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.anim__coin2 {
+  position: absolute;
+  top: 45%;
+  left: 13.5%;
+  width: 10%;
+  height: 5%;
+  -webkit-animation-name: levi;
+          animation-name: levi;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.anim__red-cercle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(252, 29, 0, 0.4);
+  -webkit-animation: anim__red-cercle 2s infinite;
+          animation: anim__red-cercle 2s infinite;
+}
+
+.anim__red-cercle:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.anim__blue-cercle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: blue;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 25, 252, 0.4);
+  -webkit-animation: anim__blue-cercle 2s infinite;
+          animation: anim__blue-cercle 2s infinite;
+}
+
+.anim__blue-cercle:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.anim__green-cercle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgb(0, 255, 13);
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(81, 255, 0, 0.4);
+  -webkit-animation: anim__green-cercle 2s infinite;
+          animation: anim__green-cercle 2s infinite;
+}
+
+.anim__green-cercle:hover {
+  -webkit-animation: none;
+          animation: none;
 }
 
 .card-title1::after {
@@ -665,6 +849,19 @@ body {
   position: relative;
   width: 15rem;
   height: 15rem;
+  transform-style: preserve-3d;
+}
+.public-trading__img:hover .anim__alotmoney {
+  transform: rotate(360deg);
+}
+.public-trading__img:hover .anim__left-top {
+  transform: rotate(360deg);
+}
+.public-trading__img:hover .anim__right-top {
+  transform: rotate(360deg);
+}
+.public-trading__img:hover .anim__button {
+  transform: rotate(360deg);
 }
 
 .card1-title::after {
@@ -719,11 +916,13 @@ body {
   grid-template-columns: repeat(2, 16.5rem);
   grid-template-rows: repeat(2, 16.5rem);
   gap: 2.55rem;
+  margin-bottom: 2.5rem;
 }
 .telegram-traid__card {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
   justify-content: space-around;
   align-items: center;
   text-align: center;
@@ -737,6 +936,8 @@ body {
   max-width: fit-content;
   padding: 0.6rem 1.2rem;
   border-radius: 1.5rem;
+  padding-top: 1rem;
+  margin-left: 46rem;
   font: inherit;
   color: inherit;
   text-decoration: none;
@@ -751,6 +952,20 @@ body {
 }
 .telegram-traid__button:hover {
   color: #833ab4;
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+.telegram-traid__button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4), transparent);
+  transition: all 650ms;
+}
+.telegram-traid__button:hover:before {
+  left: 100%;
 }
 
 .footer {
@@ -767,6 +982,27 @@ body {
   align-items: center;
   gap: 2rem;
 }
+.footer__menu a {
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.footer__menu a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #2C90F7;
+  transition: all 0.3s ease;
+}
+.footer__menu a:hover {
+  color: #2C90F7;
+}
+.footer__menu a:hover::after {
+  width: 100%;
+}
 .footer__copy {
   display: flex;
   justify-content: space-between;
@@ -777,7 +1013,118 @@ body {
 .footer__copy p {
   font: 400 0.6rem/0.75 "Montserrat";
 }
+.footer-container {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  right: 0;
+  margin: 35px 25px;
+}
+.footer-container:hover {
+  height: 300px;
+}
+.footer-container:hover .floating-button {
+  box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+  transform: translatey(5px);
+  transition: all 0.3s;
+}
+.footer-container:hover .element-container .float-element:nth-child(1) {
+  -webkit-animation: come-in 0.4s forwards 0.2s;
+  animation: come-in 0.4s forwards 0.2s;
+}
+.footer-container:hover .element-container .float-element:nth-child(2) {
+  -webkit-animation: come-in 0.4s forwards 0.4s;
+  animation: come-in 0.4s forwards 0.4s;
+}
+.footer-container:hover .element-container .float-element:nth-child(3) {
+  -webkit-animation: come-in 0.4s forwards 0.6s;
+  animation: come-in 0.4s forwards 0.6s;
+}
+.footer-container .floating-button {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #2cb3f0;
+  bottom: 0;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  line-height: 65px;
+  text-align: center;
+  font-size: 23px;
+  z-index: 100;
+  box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.footer-container .float-element {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 15px auto;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  line-height: 50px;
+  z-index: 0;
+  opacity: 0;
+  transform: translateY(100px);
+}
+.footer-container .float-element .material-icons {
+  vertical-align: middle;
+  font-size: 16px;
+}
+.footer-container .float-element:nth-child(1) {
+  background: #42A5F5;
+  box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+}
+.footer-container .float-element:nth-child(2) {
+  background: #4CAF50;
+  box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+}
+.footer-container .float-element:nth-child(3) {
+  background: #FF9800;
+  box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+}
 
+@-webkit-keyframes come-in {
+  0% {
+    transform: translatey(100px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(-50px) scale(0.4);
+  }
+  70% {
+    transform: translateX(0px) scale(1.2);
+  }
+  100% {
+    transform: translatey(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes come-in {
+  0% {
+    transform: translatey(100px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(-50px) scale(0.4);
+  }
+  70% {
+    transform: translateX(0px) scale(1.2);
+  }
+  100% {
+    transform: translatey(0px) scale(1);
+    opacity: 1;
+  }
+}
 @-webkit-keyframes button {
   0% {
     top: 0em;
@@ -801,7 +1148,6 @@ body {
     top: 0em;
   }
 }
-
 @keyframes button {
   0% {
     top: 0em;
@@ -847,6 +1193,160 @@ body {
     transform: scale(1);
   }
 }
+@-webkit-keyframes anim__red-cercle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(211, 28, 28, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+@keyframes anim__red-cercle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(211, 28, 28, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+@-webkit-keyframes anim__blue-cercle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(19, 17, 150, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(35, 32, 196, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 4, 255, 0);
+  }
+}
+@keyframes anim__blue-cercle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(19, 17, 150, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(35, 32, 196, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 4, 255, 0);
+  }
+}
+@-webkit-keyframes anim__green-cercle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(44, 204, 84, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(49, 204, 44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 34, 0);
+  }
+}
+@keyframes anim__green-cercle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(44, 204, 84, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(49, 204, 44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 34, 0);
+  }
+}
+@-webkit-keyframes levi {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes levi {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes cash {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes cash {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes cash2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes cash2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes computer {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes computer {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @-webkit-keyframes man-step {
   0% {
     left: 10rem;
@@ -876,46 +1376,356 @@ body {
   }
 }
 @-webkit-keyframes right-table {
-  0% {
-    transform: rotateY(-5deg);
-  }
-  50% {
-    transform: rotateY(-40deg);
-  }
   100% {
-    transform: rotateY(-5deg);
+    transform: rotate(2turn);
   }
 }
 @keyframes right-table {
-  0% {
-    transform: rotateY(-5deg);
-  }
-  50% {
-    transform: rotateY(-40deg);
-  }
   100% {
-    transform: rotateY(-5deg);
+    transform: rotate(2turn);
   }
 }
 @-webkit-keyframes left-table {
-  0% {
-    transform: rotateY(5deg);
-  }
-  50% {
-    transform: rotateY(40deg);
-  }
   100% {
-    transform: rotateY(5deg);
+    transform: rotate(2turn);
   }
 }
 @keyframes left-table {
-  0% {
-    transform: rotateY(5deg);
-  }
-  50% {
-    transform: rotateY(40deg);
-  }
   100% {
-    transform: rotateY(5deg);
+    transform: rotate(2turn);
+  }
+}
+@media (min-width: 1300px) {
+  .wf-section__container {
+    grid-template-columns: 22rem 36rem;
+  }
+  .container {
+    max-width: 85%;
+    padding: 1rem;
+  }
+  .holder {
+    width: 50.65rem;
+    padding: 1rem;
+  }
+}
+@media (min-width: 767px) and (max-width: 1300px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    max-width: 85%;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .header__headen-menu {
+    display: block;
+  }
+  .header__menu {
+    display: none;
+  }
+  .wf-section__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .wf-section__animation {
+    transform: perspective(16cm) scale(0.7);
+  }
+  .anim__telephone {
+    position: absolute;
+    top: 24%;
+    left: 25%;
+    width: 10%;
+    height: 20%;
+    -webkit-animation-name: levitation;
+            animation-name: levitation;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+  .anim__coin-1 {
+    position: absolute;
+    top: 33%;
+    left: 40%;
+    width: 10%;
+    height: 10%;
+    -webkit-animation-name: levitation;
+            animation-name: levitation;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+  .anim__coin-2 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 10%;
+    height: 10%;
+    -webkit-animation-name: levitation;
+            animation-name: levitation;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+  .how-it-works__title::after {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: 35%;
+    width: 10.4rem;
+    height: 0.2rem;
+    background-color: #2C90F7;
+  }
+  .instruction__title::after {
+    content: "";
+    position: absolute;
+    top: 105%;
+    left: 35%;
+    width: 10.4rem;
+    height: 0.2rem;
+    background-color: #2C90F7;
+  }
+  .telegram-traid__holder {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  .telegram-traid__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.55rem;
+    margin-bottom: 2.5rem;
+  }
+  .telegram-traid__img {
+    width: 100%;
+    height: 100%;
+  }
+  .telegram-traid__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .telegram-traid__input {
+    margin-right: 0;
+    width: 70%;
+    color: #fff;
+  }
+  .telegram-traid__submit {
+    width: 70%;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+    text-align: center;
+  }
+  .container {
+    max-width: none;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+  .holder {
+    width: 95%;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .header__headen-menu {
+    display: block;
+  }
+  .header__menu {
+    display: none;
+  }
+  .wf-section__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .wf-section__content {
+    justify-content: center;
+    align-items: center;
+  }
+  .wf-section__button {
+    padding: 1rem 3rem;
+    font: 700 2rem/1.2rem "Montserrat";
+  }
+  .wf-section__animation {
+    transform: perspective(16cm) scale(0.7);
+  }
+  .passive-income__card1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .passive-income__card-content {
+    text-align: center;
+  }
+  .passive-income__card2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .passive-income__card-content:hover .card-title1::after {
+    width: 100%;
+    left: 0;
+  }
+  .passive-income__card-content:hover .card-title2::after {
+    width: 100%;
+    left: 0;
+  }
+  .card-title1::after {
+    content: "";
+    width: 10.4rem;
+    height: 0.2rem;
+    position: absolute;
+    left: 30%;
+    top: 120%;
+    background-color: #2C90F7;
+    transition: all 1s ease;
+  }
+  .card-title2::after {
+    content: "";
+    width: 10.4rem;
+    height: 0.2rem;
+    position: absolute;
+    left: 30%;
+    top: 115%;
+    background-color: #2C90F7;
+    transition: all 1s ease;
+  }
+  .how-it-works__cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .how-it-works__title::after {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: 30%;
+    width: 10.4rem;
+    height: 0.2rem;
+    background-color: #2C90F7;
+  }
+  .card_swap::after {
+    content: "↓";
+    position: absolute;
+    top: 103%;
+    left: 50%;
+    color: #2C90F7;
+  }
+  .instruction__title::after {
+    content: "";
+    position: absolute;
+    top: 105%;
+    left: 30%;
+    width: 10.4rem;
+    height: 0.2rem;
+    background-color: #2C90F7;
+  }
+  .public-trading__card1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .public-trading__card2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .public-trading__card1-content:hover .card1-title::after {
+    width: 100%;
+    left: 0;
+  }
+  .public-trading__card2-content:hover .card2-title::after {
+    width: 100%;
+    left: 0;
+  }
+  .card1-title::after {
+    content: "";
+    width: 10.4rem;
+    height: 0.2rem;
+    position: absolute;
+    left: 30%;
+    top: 120%;
+    background-color: #2C90F7;
+    transition: all 1s ease;
+  }
+  .card2-title::after {
+    content: "";
+    width: 10.4rem;
+    height: 0.2rem;
+    position: absolute;
+    left: 30%;
+    top: 120%;
+    background-color: #2C90F7;
+    transition: all 1s ease;
+  }
+  .telegram-traid__holder {
+    flex-direction: column;
+  }
+  .telegram-traid__cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .telegram-traid__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .telegram-traid__form input {
+    margin-bottom: 1rem;
+  }
+  .telegram-traid__input {
+    margin-right: 0;
+    width: 70%;
+    color: #fff;
+  }
+  .wrap {
+    padding: 0.5rem;
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer__logo {
+    max-width: 30%;
+    margin-bottom: 0.5rem;
+  }
+  .footer__menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer__copy p {
+    margin-bottom: 0.3rem;
   }
 }/*# sourceMappingURL=exam.css.map */
